@@ -1,0 +1,27 @@
+  
+       System.setProperty("webdriver.com.driver","chromedriver.exe");
+        
+        DesiredCapabilities d=new DesiredCapabilities();
+        d.setAcceptInsecureCerts(true);
+        
+        ChromeOptions co= new ChromeOptions();
+        co.merge(d);
+        WebDriver driver=new ChromeDriver(co);
+        driver.get("https://sbtet.ap.gov.in/APSBTET/results.xls");
+        System.out.println("sleep started");
+        Thread.sleep(10000);
+          System.out.println("sleep ed");
+        WebElement us=driver.findElement(By.xpath("//*[@id=\"aadhar1\"]"));
+       WebElement pass=driver.findElement(By.xpath("//*[@id=\"grade2\"]"));
+       WebElement btn=driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/div/form/div[3]/div/input"));                      
+        us.sendKeys("19173-cm-005");
+     pass.sendKeys("6SEM");  
+    btn.click();
+    System.out.println("sleep started");
+        Thread.sleep(10000);
+          System.out.println("sleep ed");
+    System.out.print(driver.findElement(By.xpath("/html/body/div[3]/div/div/div[2]/div/form/table/tbody/tr[6]/td")).getText());
+         System.out.println("done");
+       }catch(Exception e){
+       System.out.println(e);
+       } 
