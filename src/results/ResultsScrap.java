@@ -386,7 +386,7 @@ public String fp;
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         JFileChooser ch = new JFileChooser();
-
+        //for choosing file (roll list)
         int re = ch.showOpenDialog(null);
         if (re == 0) {
             filePath = pathof(ch.getSelectedFile().getAbsolutePath());
@@ -399,6 +399,7 @@ public String fp;
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        //from file loading data into an array
         File f = new File(filePath);
         input = new String[100];
         try {
@@ -425,6 +426,7 @@ public String fp;
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        //for generating roll list
         PinGene p = new PinGene();
         p.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
